@@ -1,3 +1,5 @@
+// Comando para rodar: node variaveis-clientes/build.js arestaseesquadrias
+
 const fs = require('fs')
 const path = require('path')
 
