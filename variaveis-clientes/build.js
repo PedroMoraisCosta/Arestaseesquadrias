@@ -24,7 +24,7 @@ const header_path = path.join(__dirname, '../header.html') // Sobrescreve header
 
 // Validacoes
 if (!fs.existsSync(clienteDir)) {
-  console.error(`Erro: pasta do cliente "${cliente}" não encontrada`)
+  console.error(`Erro: pasta do cliente "${clienteDir}" não encontrada`)
   process.exit(1)
 }
 
