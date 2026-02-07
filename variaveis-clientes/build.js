@@ -18,7 +18,12 @@ const clienteDir = path.join(__dirname, cliente) // pasta do cliente
 const index_template = path.join(__dirname, 'index.template.html')
 const footer_template = path.join(__dirname, 'footer.template.html')
 const header_template = path.join(__dirname, 'header.template.html')
+const index_section_template = path.join(
+  __dirname,
+  'index-section.template.html'
+)
 const index_path = path.join(__dirname, '../index.html') // Sobrescreve index.html na raiz
+const index_section_path = path.join(__dirname, '../index-section.html')
 const footer_path = path.join(__dirname, '../footer.html') // Sobrescreve footer.html na raiz
 const header_path = path.join(__dirname, '../header.html') // Sobrescreve header.html na raiz
 
@@ -34,6 +39,7 @@ if (!fs.existsSync(varsPath)) {
 }
 
 const index_page = fs.readFileSync(index_template, 'utf8')
+const index_section_page = fs.readFileSync(index_section_template, 'utf8')
 const footer_page = fs.readFileSync(footer_template, 'utf8')
 const header_page = fs.readFileSync(header_template, 'utf8')
 const vars = JSON.parse(fs.readFileSync(varsPath, 'utf8'))
@@ -60,8 +66,14 @@ for (const key in vars) {
   output = output.replace(regex, vars[key])
 }
 
-// Escreve footer.html na raiz
 fs.writeFileSync(footer_path, output)
+
+output = index_section_page
+for (const key in vars) {
+  const regex = new RegExp(`{{${key}}}`, 'g')
+  output = output.replace(regex, vars[key])
+}
+fs.writeFileSync(index_section_path, output)
 
 console.log(`Sucesso ${cliente}`)
 
