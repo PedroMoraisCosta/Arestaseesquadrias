@@ -14,30 +14,56 @@ if (!cliente) {
 
 // Caminhos
 const varsPath = path.join(__dirname, cliente, 'variaveis.json') // pasta do cliente
-const templatePath = path.join(__dirname, 'index.trocavariaveis.html') // HTML base na raiz
-const outputPath = path.join(__dirname, '../index.html') // Sobrescreve index.html na raiz
+const clienteDir = path.join(__dirname, cliente) // pasta do cliente
+const index_template = path.join(__dirname, 'index.trocarvariaveis.html')
+const footer_template = path.join(__dirname, 'footer.trocarvariaveis.html')
+const index_path = path.join(__dirname, '../index.html') // Sobrescreve index.html na raiz
+const footer_path = path.join(__dirname, '../footer.html') // Sobrescreve footer.html na raiz
 
-// Verifica se o variaveis.json existe
+// Validacoes
+if (!fs.existsSync(clienteDir)) {
+  console.error(`Erro: pasta do cliente "${cliente}" não encontrada`)
+  process.exit(1)
+}
+
 if (!fs.existsSync(varsPath)) {
   console.error(`Erro: ${varsPath} não encontrado`)
   process.exit(1)
 }
 
-const template = fs.readFileSync(templatePath, 'utf8')
+if (!fs.existsSync(index_template)) {
+  console.error('Erro: index.trocavariaveis.html não encontrado')
+  process.exit(1)
+}
+
+if (!fs.existsSync(footer_template)) {
+  console.error('Erro: footer.trocavariaveis.html não encontrado')
+  process.exit(1)
+}
+
+const template_page = fs.readFileSync(index_template, 'utf8')
+const footer_page = fs.readFileSync(footer_template, 'utf8')
 const vars = JSON.parse(fs.readFileSync(varsPath, 'utf8'))
 
-let output = template
+let output = template_page
 for (const key in vars) {
   const regex = new RegExp(`{{${key}}}`, 'g')
   output = output.replace(regex, vars[key])
 }
 
 // Escreve index.html na raiz
-fs.writeFileSync(outputPath, output)
+fs.writeFileSync(index_path, output)
 
-console.log(
-  `index.html gerado com sucesso usando variaveis-clientes/${cliente}/variaveis.json`
-)
+output = footer_page
+for (const key in vars) {
+  const regex = new RegExp(`{{${key}}}`, 'g')
+  output = output.replace(regex, vars[key])
+}
+
+// Escreve footer.html na raiz
+fs.writeFileSync(footer_path, output)
+
+console.log(`Sucesso ${cliente}`)
 
 // Copia favicon
 const faviconSrc = path.join(__dirname, cliente, 'logo.ico')
@@ -45,7 +71,6 @@ const faviconDest = path.join(__dirname, '..', 'logo.ico')
 
 if (fs.existsSync(faviconSrc)) {
   fs.copyFileSync(faviconSrc, faviconDest)
-  console.log('Favicon copiado para a raiz')
 } else {
   console.error(`Erro: favicon não encontrado para o cliente "${cliente}"`)
   process.exit(1)

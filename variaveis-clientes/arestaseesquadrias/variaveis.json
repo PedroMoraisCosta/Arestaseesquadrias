@@ -1,5 +1,13 @@
 {
     "TITLE": "Arestas e Esquadrias",
     "DESCRIPTION": "arestas e esquadrias, pintura, restauros,electricistas, pladur, fachadas, oliveira do douro, vila nova de gaia, porto",
-    "FAVICON": "/logo.ico"
+    "FAVICON": "/logo.ico",
+
+
+  "FOOTER_PHONE": "+351 913 471 411",
+  "FOOTER_EMAIL": "arestaseesquadrias@gmail.com",
+  "FOOTER_ADDRESS_LINE1": "Rua da Fábrica, n.º 158",
+  "FOOTER_ADDRESS_LINE2": "4430-095 Oliveira do Douro"
+
+  
 }
