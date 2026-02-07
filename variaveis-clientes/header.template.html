@@ -7,11 +7,11 @@
                 <div class="contact d-flex align-items-center gap-2">
                     <a href="tel:+351910857380" class="text-white text-decoration-none d-inline-flex align-items-center">
                         <i class="bi bi-telephone ms-1"></i>
-                        <span class="small top-phone" style="font-size:11px">+351 913 471 411</span>
+                        <span class="small top-phone" style="font-size:11px">{{PHONE}}</span>
                     </a>
-                    <a href="mailto:arestaseesquadrias@gmail.com" class="text-white text-decoration-none d-inline-flex align-items-center">
+                    <a href="mailto:{{EMAIL}}" class="text-white text-decoration-none d-inline-flex align-items-center">
                         <i class="bi bi-envelope ms-1 mt-1"></i>
-                        <span class="small top-email" style="font-size:11px">arestaseesquadrias@gmail.com</span>
+                        <span class="small top-email" style="font-size:11px">{{EMAIL}}</span>
                     </a>
                 </div>
 
@@ -19,20 +19,20 @@
                 <div class="top-social d-flex align-items-center gap-1 ms-1 mt-2">
                     <!-- WhatsApp -->
                     <a href="https://wa.me/351910857380" class="d-inline-flex align-items-center" aria-label="WhatsApp">
-                        <img src="./assets/images/whatsapp.png" alt="Arestas e Esquadrias WhatsApp" width="22" height="22">
+                        <img src="./assets/images/whatsapp.png" alt="{{TITLE}} WhatsApp" width="22" height="22">
                     </a>
 
                     <!-- faceboock -->
                      <a href="https://www.facebook.com/nunoferreiraconstrucao?locale=pt_PT">
                         <button class="btn btn-sm p-0 border-0 d-inline-flex align-items-center" id="lang-pt" aria-label="Português">
-                            <img src="./assets/images/facebook.png" alt="Arestas e Esquadrias facebook" width="22" height="22">
+                            <img src="./assets/images/facebook.png" alt="{{TITLE}} facebook" width="22" height="22">
                         </button>
                     </a>
 
                     <!-- youtube -->
                      <a href="https://www.youtube.com/@NunoFerreira-k6b">
                         <button class="btn btn-sm p-0 border-0 d-inline-flex align-items-center" id="lang-en" aria-label="English">
-                            <img src="./assets/images/youtube.png" alt="Arestas e Esquadrias youtube" width="22" height="22">
+                            <img src="./assets/images/youtube.png" alt="{{TITLE}} youtube" width="22" height="22">
                         </button>
                     </a>
 
@@ -52,12 +52,12 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid ">
                 <a href="index.html#home" class="navbar-brand d-flex align-items-center">
-                    <img class="brand-img" src="./assets/images/logo_nuno_ferreira_horizontal.png" alt="Arestas e Esquadrias">
+                    <img class="brand-img" src="{{HEADER_LOGO_SRC}}" alt="{{TITLE}}">
                 </a>
                 
-                <a href="https://search.google.com/local/writereview?placeid=ChIJnyBhizdvJA0RHBOX2_xOdfs" id="btn-avalie-nos"class="btn-pill-blue ms-lg-2 mt-2 mb-2" aria-label="Avalie-nos">
+                <a href="{{HEADER_LINK_GOOGLE}}" id="btn-avalie-nos"class="btn-pill-blue ms-lg-2 mt-2 mb-2" aria-label="Avalie-nos">
                     <span></span>
-                    <i class="bi bi-star-fill" aria-hidden="true" ></i>
+                    <i class="bi bi-star-fill" aria-hidden="true" data-i18n="feedback"></i>
                 </a>
 
 

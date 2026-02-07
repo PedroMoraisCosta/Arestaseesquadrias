@@ -15,10 +15,12 @@ if (!cliente) {
 // Caminhos
 const varsPath = path.join(__dirname, cliente, 'variaveis.json') // pasta do cliente
 const clienteDir = path.join(__dirname, cliente) // pasta do cliente
-const index_template = path.join(__dirname, 'index.trocarvariaveis.html')
-const footer_template = path.join(__dirname, 'footer.trocarvariaveis.html')
+const index_template = path.join(__dirname, 'index.template.html')
+const footer_template = path.join(__dirname, 'footer.template.html')
+const header_template = path.join(__dirname, 'header.template.html')
 const index_path = path.join(__dirname, '../index.html') // Sobrescreve index.html na raiz
 const footer_path = path.join(__dirname, '../footer.html') // Sobrescreve footer.html na raiz
+const header_path = path.join(__dirname, '../header.html') // Sobrescreve header.html na raiz
 
 // Validacoes
 if (!fs.existsSync(clienteDir)) {
@@ -31,28 +33,26 @@ if (!fs.existsSync(varsPath)) {
   process.exit(1)
 }
 
-if (!fs.existsSync(index_template)) {
-  console.error('Erro: index.trocavariaveis.html não encontrado')
-  process.exit(1)
-}
-
-if (!fs.existsSync(footer_template)) {
-  console.error('Erro: footer.trocavariaveis.html não encontrado')
-  process.exit(1)
-}
-
-const template_page = fs.readFileSync(index_template, 'utf8')
+const index_page = fs.readFileSync(index_template, 'utf8')
 const footer_page = fs.readFileSync(footer_template, 'utf8')
+const header_page = fs.readFileSync(header_template, 'utf8')
 const vars = JSON.parse(fs.readFileSync(varsPath, 'utf8'))
 
-let output = template_page
+let output = index_page
 for (const key in vars) {
   const regex = new RegExp(`{{${key}}}`, 'g')
   output = output.replace(regex, vars[key])
 }
 
-// Escreve index.html na raiz
 fs.writeFileSync(index_path, output)
+
+output = header_page
+for (const key in vars) {
+  const regex = new RegExp(`{{${key}}}`, 'g')
+  output = output.replace(regex, vars[key])
+}
+
+fs.writeFileSync(header_path, output)
 
 output = footer_page
 for (const key in vars) {
