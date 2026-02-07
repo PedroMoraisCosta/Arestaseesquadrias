@@ -9,7 +9,8 @@
     "Instagram_Id" : "arestas.e.esquadrias/",
     "WhatsAppId": "351913471411",
 
-    "HEADER_LINK_GOOGLE": "https://search.google.com/local/writereview?placeid=ChIJnyBhizdvJA0RHBOX2_xOdfs",
+    "HEADER_SHOW_LINK_GOOGLE": "d-none",
+    "HEADER_LINK_GOOGLE": "",
     "HEADER_LOGO_SRC": "./variaveis-clientes/arestaseesquadrias/logo.png",
 
     "FOOTER_ADDRESS_LINE1": "Rua da Fábrica, n.º 158",
