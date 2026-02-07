@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /lang/
+Allow: /assets/images/
+Allow: /assets/videos/
+Sitemap: /sitemap.xml

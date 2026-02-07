@@ -1,0 +1,343 @@
+﻿:root {
+    --nf-blue: #2b6dff;
+    --nf-ink: #0a2540;
+    --nf-mute: #667085;
+    --nf-bg: #f6f8fb;
+    --nf-card: #ffffff;
+    --nf-bd: #e6e9ef;
+}
+
+/* ---------- TITLES ---------- */
+.nf-eyebrow {
+    font-size: .82rem;
+    letter-spacing: .08em;
+    color: var(--nf-blue);
+    font-weight: 700;
+}
+
+.nf-title-xl {
+    font-size: clamp(1.8rem,2.4vw,2.4rem);
+    font-weight: 800;
+    color: var(--nf-ink);
+}
+
+.nf-title-lg {
+    font-size: clamp(1.4rem,2vw,2rem);
+    font-weight: 800;
+    color: var(--nf-ink);
+}
+
+.nf-lead {
+    color: #475467;
+    max-width: 880px;
+}
+
+.nf-muted {
+    color: #6b7280
+}
+
+/* ---------- GUTTERS LOCAIS (para não encostar às laterais) ---------- */
+.nf-about-hero .container,
+.nf-timeline-sec .container,
+.nf-team-sec .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    max-width: 1200px;
+    text-align: justify
+}
+
+@media (min-width:576px) {
+    .nf-about-hero .container,
+    .nf-timeline-sec .container,
+    .nf-team-sec .container {
+        padding-inline: 20px !important;
+    }
+}
+
+@media (min-width:992px) {
+    .nf-about-hero .container,
+    .nf-timeline-sec .container,
+    .nf-team-sec .container {
+        padding-inline: 32px !important;
+    }
+}
+
+/* ---------- INTRO ---------- */
+.nf-about-hero {
+    background: #fff;
+}
+
+/* MÉTRICAS (mock) */
+.metric-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--nf-bd);
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 24px rgba(18,38,63,.06);
+}
+
+.metric-ico {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: var(--nf-bg);
+    color: var(--nf-blue);
+    border: 1px solid var(--nf-bd);
+}
+
+    .metric-ico i {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+.metric-text {
+    display: grid;
+    gap: 2px
+}
+
+.metric-value {
+    font-weight: 800;
+    color: var(--nf-ink);
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+    .metric-value .metric-unit {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-left: 4px;
+        color: var(--nf-ink);
+    }
+
+/* Remove as barras/linhas finas no topo e no fundo da secção "Sobre nós" */
+.nf-about-hero,
+.nf-about-hero .container {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important; /* caso a linha venha de sombra inset */
+}
+
+    /* Alguns temas desenham as linhas com pseudo-elementos */
+    .nf-about-hero::before,
+    .nf-about-hero::after {
+        content: none !important;
+    }
+
+/* Mantém o mesmo “respiro” da secção (ajusta se quiseres) */
+.nf-about-hero {
+    padding-top: 24px; /* ou o valor que já tens */
+    padding-bottom: 16px;
+}
+
+.metric-sub {
+    font-size: .82rem;
+    color: #6b7280;
+}
+
+/* CHIPS */
+.nf-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid var(--nf-bd);
+    border-radius: 999px;
+    padding: 8px 12px;
+    box-shadow: 0 6px 18px rgba(18,38,63,.06);
+    color: var(--nf-ink)
+}
+
+    .nf-chip i {
+        color: var(--nf-blue)
+    }
+/* ===== Vars ===== */
+:root {
+    --awards-hero: url("./assets/images/company-bg.png"); /* <- troca aqui a imagem  */
+    --overlay: rgba(11,46,134,.78);
+    --ink: #0a2540;
+    --muted: #667085;
+    --stat-bg: #f4f6fa;
+    --bd: #e6e9ef;
+}
+
+/* ===== Timeline (faixa azul com imagem) ===== */
+.awards-hero {
+    /* overlay + imagem */
+    background: linear-gradient(0deg, var(--overlay), var(--overlay)), var(--awards-hero) center/cover no-repeat;
+}
+
+.awards-item .year {
+    font-weight: 200;
+    font-size: clamp(0.8rem, 1.5vw, 0.75rem);
+    padding-top: 20px;
+}
+
+.awards-item .badge-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: grid;
+    place-items: center;
+    margin: .35rem auto .6rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+
+    .awards-item .badge-icon i {
+        font-size: 32px;
+        color: #fff;
+    }
+
+.awards-item .legend {
+    opacity: .92;
+    line-height: 1.2;
+}
+
+/* ===== Métricas (faixa clara) ===== */
+.stats-strip {
+    background-color: #e9ecef;
+}
+
+.stat-item {
+    padding: .5rem 1rem;
+}
+
+    .stat-item .value {
+        font-size: clamp(1.25rem,2.4vw,2rem);
+        font-weight: 800;
+        color: var(--ink);
+        line-height: 1.1;
+    }
+
+    .stat-item .label {
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    .stat-item .note {
+        color: var(--muted);
+    }
+
+
+/* ---------- TEAM ---------- */
+--------- TEAM ---------- */
+.nf-team-sec {
+    background: #fff;
+}
+
+.nf-btn {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: var(--nf-blue);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid var(--nf-blue);
+    box-shadow: 0 10px 26px rgba(22,119,255,.28);
+}
+
+    .nf-btn:hover {
+        background: #146fe3;
+        border-color: #146fe3;
+        color: #fff
+    }
+
+.nf-team-card {
+    background: #fff;
+    border: 1px solid var(--nf-bd);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(18,38,63,.06);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+    .nf-team-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(18,38,63,.1);
+    }
+
+.nf-team-media img {
+    object-fit: scale-down;
+}
+
+.nf-team-body {
+    padding: 12px;
+}
+
+.nf-team-name {
+    margin: 0 0 4px;
+    font-weight: 800;
+    color: var(--nf-ink)
+}
+
+.nf-team-role {
+    margin: 0;
+    color: #6b7280;
+    font-size: .95rem
+}
+
+
+
+/* ---------- HERO (já existente – sem alterações) ---------- */
+.hero-logo {
+    display: block;
+    width: min(9em,90%);
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+}
+
+.hero-slogan {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.3;
+    font-size: 1.2em;
+    text-shadow: 0 3px 8px rgba(0,0,0,.55);
+    -webkit-text-stroke: .4px rgba(0,0,0,.35);
+}
+
+/* grid responsivo (mantém o que tinhas) */
+@media (max-width: 991.98px) {
+    .nf-tl-card {
+        min-height: 170px;
+    }
+    .nf-timeline {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .team-copy-wrap {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767.98px) { /* < md */
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+    .hero-logo {
+        width: min(9em,90%);
+        filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+    }
+}
+
+@media (max-width: 575.98px) {
+    .nf-tl-card {
+        min-height: unset;
+    }
+    .nf-timeline {
+        grid-template-columns: 1fr;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-logo {
+        width: min(13em,100%);
+        filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+    }
+}

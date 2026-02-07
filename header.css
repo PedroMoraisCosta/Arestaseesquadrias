@@ -1,0 +1,315 @@
+.text-header-size {
+    width: 100%;
+    height: 45px;
+    padding: 4px 4px 4px 4px;
+}
+
+.language-icons img {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    height: 24px
+}
+
+    .language-icons img:hover {
+        transform: scale(1.1);
+    }
+
+.navbar {
+    min-width: 320px;
+    margin-bottom: 0;
+    border: 0;
+    font-size: 12px; /*!important;P*/
+    letter-spacing: 1px;
+    background-color: rgba(35, 132, 255, 30%);
+    padding: 0px;
+    padding-top: 35px;
+}
+
+    .navbar .container {
+        display: flex;
+        /*justify-content: space-between;*/
+        align-items: center;
+        max-width: 1200px; /* ou 1140px, depende do teu design */
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .navbar li a, navbar .navbar-brand {
+        color: white;
+        /*text-shadow: 1px 1px 2px black;*/
+        /*font-family: 'Lucida Sans Unicode';*/
+    }
+
+.navbar-nav .nav-link.active {
+    font-weight: 500;
+}
+
+.navbar-nav {
+    /*display: flex;*/
+    gap: 1rem;
+}
+
+    .navbar-nav .nav-link {
+        color: white;
+        /*text-shadow: 1px 1px 2px black;*/
+    }
+
+.nav-link:hover {
+    color: lightslategray !important;
+}
+
+.h-50px {
+    height: 50px !important;
+}
+
+.mt-50px {
+    margin-top: 50px !important;
+}
+
+/* Bot�o �Avalie-nos� � igual ao mock */
+.btn-pill-blue {
+    background: #1677ff; /* azul forte do mock */
+    border: 1px solid #1677ff;
+    color: #fff;
+    height: 25px; /* mesma altura visual do exemplo */
+    padding: 0 10px; /* controlo de largura */
+    border-radius: 999px; /* cantos bem arredondados */
+    display: inline-flex;
+    align-items: center;
+    gap: 4px; /*espa�o entre texto e �cone*/
+    font-size: 12px;
+    /* font-weight: 600; */
+    /* line-height: 1; */
+    text-decoration: none;
+    transition: background-color .15s, box-shadow .15s, border-color .15s;
+}
+
+    .btn-pill-blue:hover {
+        background: #146fe3; /* ligeiramente mais escuro no hover */
+        border-color: #146fe3;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .btn-pill-blue:active {
+        background: #0f5ec7;
+        border-color: #0f5ec7;
+    }
+
+    .btn-pill-blue:focus-visible {
+        box-shadow: 0 0 0 3px rgba(22,119,255,.35);
+        outline: 0;
+    }
+
+    /* �cone branco do lado direito */
+    .btn-pill-blue .bi-star-fill,
+    .btn-pill-blue .icon-star {
+        font-size: 12px; /* 16px como no mock */
+        color: #fff;
+        margin-left: 2px;
+    }
+
+.navbar-top {
+    max-width: 1200px;
+    width: 100%;
+    position: fixed;
+    min-width: 320px;
+    min-height: 35px;
+    margin-bottom: 0;
+    border: 0;
+    font-size: 15px !important;
+    letter-spacing: 1px;
+    background-color: #0033A1;
+    z-index: 9999;
+}
+
+.btn-navbar {
+    background-color: transparent !important;
+    border: none !important;
+    color: white !important;
+    /*padding: 0.375rem 0.75rem;*/
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+    .btn-navbar i {
+        color: white; /*!important;*/
+        margin-right: 0.25rem;
+    }
+
+.header-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /*justify-content: space-between;*/
+}
+
+.content-container {
+    max-width: 1200px; /* ou o que estiveres a usar para o ret�ngulo branco */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.navbar-toggler {
+    padding: 4px 6px; /* menos espaço interno */
+    font-size: 0.8rem; /* reduz ícone */
+}
+
+.navbar-toggler-icon {
+    width: 20px; /* largura menor */
+    height: 20px; /* altura menor */
+}
+
+.brand-img {
+    height: 32px;
+    width: auto;
+}
+
+/* 1) Mantém LOGO + Avalie-nos juntinhos em todas as larguras */
+.navbar > .container-fluid {
+    display: flex; /* garante flex no wrapper */
+    align-items: center;
+    justify-content: flex-start; /* em vez de space-between */
+    gap: .5rem; /* espaço entre logo e botão */
+}
+
+/* 2) Empurra o hamburger para a direita quando a navbar está colapsada */
+.navbar .navbar-toggler {
+    margin-left: auto; /* fica à direita */
+}
+
+:root {
+    --top-gutter: 16px; /* padding lateral do container */
+    --top-gap: clamp(6px, 2vw, 12px); /* gap adaptável */
+}
+
+/* Base: left = contactos (cresce), right = social (fixo), tudo numa linha */
+.navbar-top .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px; /* gutter padrão em telas maiores */
+    gap: clamp(6px,2vw,12px);
+}
+
+.navbar-top .contact {
+    flex: 1 1 auto; /* ocupa o espaço disponível à esquerda */
+    min-width: 0; /* permite encolher sem quebrar */
+    display: flex;
+    align-items: center;
+    gap: clamp(6px,2vw,12px);
+    white-space: nowrap;
+}
+
+    .navbar-top .contact a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+
+.navbar-top .top-social {
+    flex: 0 0 auto; /* bloco da direita não cresce */
+    display: flex;
+    align-items: center;
+    gap: clamp(6px,2vw,10px);
+}
+
+    .navbar-top .top-social img {
+        width: 22px;
+        height: 22px;
+        display: block;
+    }
+
+
+/* garante que links de contacto não “partem” feio */
+.navbar-top .contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navbar-top .contact {
+    gap: 6px;
+}
+
+    .navbar-top .contact a {
+        gap: 4px;
+    }
+
+/* fontes um pouco menores */
+.navbar-top {
+    font-size: 13px;
+}
+
+    .navbar-top .top-phone,
+    .navbar-top .top-email {
+        font-size: 11px;
+    }
+
+    /* email ocupa só o que couber, com reticências; não deixa “empurrar” os ícones */
+    .navbar-top .top-email {
+        display: inline-block;
+        min-width: 0;
+        max-width: 48vw; /* ajusta se precisares de mais/menos espaço ao email */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* ícones ligeiramente menores para caber tudo */
+    .navbar-top .top-social img {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+@media (min-width: 576px) {
+    .brand-img {
+        height: 38px;
+    }
+}
+
+/* 3) Em desktop, empurra o menu expandido para a direita */
+@media (min-width: 992px) {
+    .brand-img {
+        height: 45px;
+    }
+
+    .navbar .navbar-collapse {
+        margin-left: auto; /* nav items à direita */
+    }
+}
+
+
+/* se mesmo assim faltar espaço extremo, encolhe a fonte */
+@media (max-width: 400px) {
+    .navbar-top {
+        font-size: 14px;
+    }
+
+    /* ==== iPhone SE / telas muito estreitas: ocupar 100% com gutters pequenos ==== */
+    @media (max-width: 380px) {
+        .navbar-top .topbar-inner {
+            max-width: none; /* ocupa 100% da largura */
+            width: 100%;
+            padding: 0 4px; /* gutter minimo nas pontas */
+            gap: 1px;
+            font-size: 10px;
+        }
+        .top-social {
+            padding: 0px 0px;
+        }
+    }
+}

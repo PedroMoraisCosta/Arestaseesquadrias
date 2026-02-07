@@ -1,0 +1,757 @@
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap'); */
+
+
+body {
+    margin: 0;
+    color: #2E2E2E;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-width: 320px;
+    background-color: #0a0a2a; /* azul escuro */
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', sans-serif;
+}
+
+/* Container central com largura fixa */
+.container {
+    max-width: 1200px; /* largura fixa ideal para desktop */
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    /* min-height: 100vh; Comentado porque na pagina do servico adiciona espaco em ecra grande à parte de baixo da imagem e do nr. de telemovel*/
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.row {
+    margin-left: 0px !important;
+    width: 100%;
+}
+
+.banner {
+    background-image: url('./assets/images/hero-image.jpg'); /* Caminho da imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px; /* Ajusta conforme o necess�rio */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 4px black;
+}
+
+.title-button {
+    background-color: #3e5b75;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    width: fit-content; /* Shrinks to fit the text */
+    border-radius: 2px;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+/* ===== HERO ===== */
+.hero {
+    /*position: ;*/
+    background: url('./assets/images/hero-image.jpg') center / cover no-repeat;
+    /* altura FLUIDA + margens sup/inf ESTÁVEIS */
+    /*min-height: clamp(440px, 46vw, 600px);*/
+    padding-block: 40px; /* mantém as margens iguais no topo e em baixo */
+    display: flex;
+    align-items: center; /* centro vertical do overlay */
+    isolation: isolate; /* robusto com elementos fixos acima */
+    overflow: hidden;
+}
+
+/* O retângulo azul: escala por font-size do próprio cartão */
+.hero-overlay {
+    /* base para ESCALA de tudo dentro (logo, textos, padding) */
+    font-size: clamp(12px, 1.1vw + 0.2rem, 18px);
+    /* largura do cartão também fluida */
+    width: clamp(220px, 34vw, 320px);
+    /* deslocamento desde a esquerda mantendo o cartão centrado verticalmente */
+    margin-left: clamp(16px, 6vw, 7.25rem);
+    /* padding com top = bottom (igualmente dimensionados) */
+    padding: 0.6em 1.0em;
+    background: rgba(11, 62, 166, 0.50); /* só transparência */
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    /* centra conteúdo dentro do cartão */
+    display: grid;
+    justify-items: center;
+    row-gap: 0.9em;
+}
+
+/* Logo e texto usam unidades relativas ao cartão (em) → escalam juntos */
+.hero-logo {
+    display: block;
+    width: min(12em, 70%); /* reduz com o cartão; máx. ~220px quando 1em≈18px */
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+}
+
+.hero-slogan {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.3;
+    font-size: 1.2em; /* herda da escala do cartão */
+    text-shadow: 0 3px 8px rgba(0,0,0,.55);
+    -webkit-text-stroke: .4px rgba(0,0,0,.35);
+}
+
+.info-card {
+    text-align: center;
+    border: 1px solid #2483FE;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+    .info-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .info-card i {
+        font-size: 2rem;
+        color: #2483FE;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .info-card h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .info-card small {
+        font-size: 0.9rem;
+        color: #444;
+        display: block;
+        line-height: 1.4;
+    }
+
+
+/***********************************/
+
+
+
+/* ===== Section wrapper ===== */
+.nf-section {
+    padding: 28px 0 56px; /* fica ligeiramente abaixo da hero */
+    background: #fff;
+}
+
+/* ===== Feature cards ===== */
+.nf-features {
+    margin-top: 8px;
+}
+
+.nf-feature-card {
+    background: #f3f5f7;
+    border: 1px solid #eceff3;
+    border-radius: 16px;
+    padding: 18px 16px;
+    height: 100%;
+    box-shadow: 0 6px 18px rgba(18, 38, 63, .06);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+    .nf-feature-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(18,38,63,.08);
+    }
+
+.nf-feature-ico {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    /*background: #e9eefb;*/
+    color: #2b6dff;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.nf-feature-title {
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+
+.nf-feature-text {
+    margin: 0 0 8px;
+    color: #667085;
+    font-size: .95rem;
+}
+
+.nf-link {
+    font-weight: 600;
+    font-size: .85rem;
+    color: #2b6dff;
+    text-decoration: none;
+}
+
+    .nf-link:hover {
+        text-decoration: underline;
+    }
+
+/* ===== About ===== */
+.nf-about {
+    margin-top: 22px;
+}
+
+.nf-about-img {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(18,38,63,.12);
+}
+
+    .nf-about-img img {
+        width: 100%;
+        display: block;
+    }
+
+    .nf-about-img::before {
+        /* linha diagonal decorativa */
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, transparent 49%, rgba(255,255,255,.9) 50%, transparent 51%);
+        opacity: .35;
+        pointer-events: none;
+    }
+
+.nf-badge-years {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1677ff;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(22,119,255,.35);
+}
+
+    .nf-badge-years strong {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .nf-badge-years small {
+        font-size: 12px;
+        line-height: 1.05;
+    }
+
+.nf-eyebrow {
+    display: inline-block;
+    font-size: .8rem;
+    letter-spacing: .08em;
+    color: #2b6dff;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.nf-title {
+    font-weight: 800;
+    margin: 0 0 10px;
+}
+
+.nf-lead {
+    color: #475467;
+    margin-bottom: 14px;
+    text-align: justify;
+}
+
+.nf-mini-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e6e9ef;
+    box-shadow: 0 6px 16px rgba(18,38,63,.06);
+}
+
+    .nf-mini-card i {
+        font-size: 20px;
+        color: #2b6dff;
+    }
+
+.nf-mini-title {
+    font-weight: 700;
+    line-height: 1;
+}
+
+.nf-mini-sub {
+    color: #667085;
+    font-size: .9rem;
+    margin-top: -2px;
+}
+
+.nf-mute {
+    color: #667085;
+    text-align: justify;
+}
+
+.nf-cta {
+    background: #1677ff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 16px;
+    border: 1px solid #1677ff;
+    box-shadow: 0 10px 26px rgba(22,119,255,.28);
+}
+
+.nf-cta:hover {
+    background: #146fe3;
+    border-color: #146fe3;
+    color: #fff;
+}
+
+
+/* utilitário para esconder headings visuais e manter acessibilidade */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== Atalhos de Serviços (retângulos) ===== */
+.services-quick {
+    margin-block: 70px;
+}
+/* mais espaço em cima/baixo */
+.sq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.sq-grid {
+    display: grid;
+    /*grid-template-columns: repeat(6, minmax(0,1fr));*/ /* desktop: 6 por linha */
+    gap: 20px 20px; /* gaps contidos */
+    align-items: stretch;
+    --card-w: 120px; /* ← try 150–180px */
+    grid-template-columns: repeat(6, var(--card-w));
+    justify-content: center; /* centers the 6 fixed-width tracks */
+}
+
+/* cartão retangular com o mesmo look dos teus cards de serviços */
+.sq-card {
+    --card-pad: clamp(26px, 3.2vw, 26px);
+    --icon-size: clamp(40px, 3.8vw, 40px);
+    min-height: 120px; /* garante alturas iguais */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: #f3f5f7;
+    border: 1px solid #eceff3;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(18,38,63,.06);
+    /*padding: var(--card-pad);*/
+    /*min-width: 90px;*/
+    color: #0a2540;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.sq-icon {
+    font-size: var(--icon-size);
+    color: #2b6dff;
+    transition: transform .18s ease, color .18s ease;
+}
+
+.sq-label {
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: .82rem;
+    line-height: 1.2;
+}
+
+/* hover/focus: ícone cresce ligeiro e card ganha sombra */
+.sq-card:hover .sq-icon,
+.sq-card:focus-visible .sq-icon {
+    transform: scale(1.08);
+    color: #146fe3;
+}
+
+.sq-card:hover,
+.sq-card:focus-visible {
+    border-color: #e3e8ef;
+    box-shadow: 0 10px 24px rgba(18,38,63,.08);
+    outline: 0;
+}
+
+/* ===== News Section ===== */
+.nf-news {
+    --blue: #0033A1;
+    --ring: radial-gradient(circle at 85% 15%, rgba(255,255,255,.08) 0 80px, transparent 81px 110px, rgba(255,255,255,.06) 111px 150px, transparent 151px 180px, rgba(255,255,255,.05) 181px 220px, transparent 221px);
+    background: var(--blue);
+    position: relative;
+    isolation: isolate;
+}
+
+    .nf-news::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--ring);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+.news-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 16px 56px;
+    color: #fff;
+}
+
+.news-eyebrow {
+    margin: 0 0 6px;
+    opacity: .75;
+    font-size: .9rem;
+    letter-spacing: .06em;
+}
+
+.news-title {
+    margin: 0 0 18px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.news-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+}
+
+/* Card base (escuro) */
+.news-card {
+    --card-bg: rgba(255,255,255,.06);
+    --card-border: rgba(255,255,255,.20);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* Variante clara */
+    .news-card.is-light {
+        --card-bg: #fff;
+        --card-border: #e6e9ef;
+        color: #0a2540;
+    }
+
+        .news-card.is-light .news-body .news-heading a {
+            color: #0a2540;
+        }
+
+        .news-card.is-light .news-tag {
+            color: #5f6c7b;
+        }
+
+/* Media com “canto curvo” */
+.news-media {
+    display: block;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+    .news-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .news-media::after {
+        content: "";
+        position: absolute;
+        right: -120px;
+        bottom: -120px;
+        width: 240px;
+        height: 240px;
+        background: var(--card-bg);
+        border-radius: 50%;
+    }
+
+/* Corpo */
+.news-body {
+    padding: 16px;
+    border-top: 1px solid var(--card-border);
+}
+
+.news-tag {
+    font-size: .8rem;
+    opacity: .85;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.news-heading {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+    .news-heading a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+        .news-heading a:hover {
+            text-decoration: underline;
+        }
+
+.news-excerpt {
+    margin: 0;
+    opacity: .9;
+    line-height: 1.45;
+}
+
+/* CTA */
+.news-cta {
+    margin-top: 22px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-pill-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.6);
+    text-decoration: none;
+    background: transparent;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+    .btn-pill-outline:hover {
+        background: rgba(255,255,255,.08);
+        border-color: #fff;
+    }
+
+/* Wrapper para igualar larguras e centrar os “botões” */
+.nf-mini-wrap {
+    display: grid;
+    gap: 12px; /* espaço entre cartões */
+    grid-template-columns: repeat(2, minmax(240px, 1fr)); /* 2 colunas por omissão */
+    max-width: 900px; /* centra face ao conteúdo */
+    margin: 12px auto 20px; /* centra horizontalmente */
+}
+
+.nf-mini-card {
+    min-height: 72px;
+} 
+
+/* ===== Small tweaks ===== */
+/* tablet: 3 colunas × 2 linhas */
+@media (max-width: 991.98px) {
+/*    .services-quick-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 14px 12px;
+    }
+
+    .sq-link {
+        --icon-size: 68px;
+    }*/
+    .sq-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .services-quick {
+        margin-block: 32px;
+    }
+    .sq-grid {
+        grid-template-columns: repeat(3, var(--card-w)); /* ok */
+        gap: 18px 16px;
+    }
+
+    .sq-card {
+        min-height: 120px;
+    }
+    .news-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 18px;
+    }
+
+    .news-media {
+        height: 180px;
+    }
+    .nf-mini-wrap {
+        grid-template-columns: 1fr;
+        justify-items: center; /* centra os cartões dentro do grid */
+        row-gap: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    .nf-mini-card {
+        width: min(320px, 100%); /* largura confortável */
+        justify-content: center; /* conteúdo centrado */
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* 1) hero com padding igual em todos os lados */
+    .hero {
+        --hero-pad: 16px; /* controla a margem externa */
+        padding: var(--hero-pad);
+    }
+
+    /* 2) imagem alinhada à direita + overlay centrado */
+    .hero-media {
+        background-position: right center;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* centra horizontalmente o cartão */
+    }
+    /* se não usares .hero-media e a imagem está na .hero */
+    .hero:not(.hero-media) {
+        background-position: right center;
+    }
+
+    /* 3) cartão menor e perfeitamente centrado */
+    .hero-overlay {
+        /* centro exato: margens esquerda/direita ficam iguais ao padding do hero */
+        margin: 0 auto; /* centra em conjunto com a largura abaixo */
+        width: min(520px, calc(100% - (var(--hero-pad) * 2)));
+        box-sizing: border-box;
+        font-size: clamp(12px, 3.4vw, 15px);
+        padding: 1.2em 1.6em;
+        border-radius: 12px;
+    }
+
+    .hero-logo {
+        width: min(60%, 160px);
+    }
+    /*.services-quick-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 12px 1px;
+    }
+
+    .sq-container {
+        padding: 16px 12px 2px;
+    }
+
+    .sq-link {
+        --icon-size: 64px;
+    }
+
+    .sq-label {
+        font-size: 0.95rem;
+    }
+
+    .services-quick {
+        margin-block: 24px;*/ /* ajusta o valor a gosto */
+    /*}*/
+    .sq-container {
+        padding-inline: 12px;
+    }
+
+    .services-quick {
+        margin-block: 32px;
+    }
+
+    .sq-grid {
+        --card-w: 108px; /* ~375px viewport */
+        grid-template-columns: repeat(3, var(--card-w));
+        justify-content: center;
+        gap: 12px;
+
+        /*grid-template-columns: repeat(3, var(--card-w));*/
+        /*gap: 15px 13px;*/
+        padding-inline: 12px;
+        box-sizing: border-box;
+        /* 2 colunas no mobile (não 3) */
+        /*grid-template-columns: repeat(2, minmax(0,1fr));*/
+    }
+
+    .sq-card {
+        min-height: 100px;
+    }
+
+    .sq-label {
+        font-size: .96rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .news-media {
+        height: 170px;
+    }
+
+    .news-cta {
+        justify-content: center;
+    }
+    .nf-mini-wrap {
+        grid-template-columns: 1fr;
+        justify-items: center; /* centra os cartões dentro do grid */
+        row-gap: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    .nf-mini-card {
+        width: min(320px, 100%); /* largura confortável */
+        justify-content: center; /* conteúdo centrado */
+        text-align: center;
+    }
+
+}
