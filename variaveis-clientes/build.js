@@ -6,7 +6,7 @@ const cliente = process.argv[2]
 
 if (!cliente) {
   console.error('Erro: você precisa informar a pasta do cliente.')
-  console.error('Exemplo: node build.js arestaeesquadrias')
+  console.error('Exemplo: node build.js arestaseesquadrias')
   process.exit(1)
 }
 
@@ -21,11 +21,9 @@ if (!fs.existsSync(varsPath)) {
   process.exit(1)
 }
 
-// Lê template e variáveis
 const template = fs.readFileSync(templatePath, 'utf8')
 const vars = JSON.parse(fs.readFileSync(varsPath, 'utf8'))
 
-// Substitui placeholders
 let output = template
 for (const key in vars) {
   const regex = new RegExp(`{{${key}}}`, 'g')
@@ -38,3 +36,15 @@ fs.writeFileSync(outputPath, output)
 console.log(
   `index.html gerado com sucesso usando variaveis-clientes/${cliente}/variaveis.json`
 )
+
+// Copia favicon
+const faviconSrc = path.join(__dirname, cliente, 'logo.ico')
+const faviconDest = path.join(__dirname, '..', 'logo.ico')
+
+if (fs.existsSync(faviconSrc)) {
+  fs.copyFileSync(faviconSrc, faviconDest)
+  console.log('Favicon copiado para a raiz')
+} else {
+  console.error(`Erro: favicon não encontrado para o cliente "${cliente}"`)
+  process.exit(1)
+}
