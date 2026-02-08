@@ -4,7 +4,7 @@
     "FAVICON": "/logo.ico",
     "PHONE": "+351 913 471 411",
     "EMAIL": "arestaseesquadrias@gmail.com",
-    "Youtube_Id" : "@NunoFerreira-k6b",
+    "Youtube_Id" : "",
     "Facebook_Id" : "profile.php?id=61586260467766",
     "Instagram_Id" : "arestas.e.esquadrias/",
     "WhatsAppId": "351913471411",
@@ -13,8 +13,13 @@
     "HEADER_LINK_GOOGLE": "",
     "HEADER_LOGO_SRC": "./variaveis-clientes/arestaseesquadrias/logo.png",
 
-    "FOOTER_ADDRESS_LINE1": "Rua da Fábrica, n.º 158",
-    "FOOTER_ADDRESS_LINE2": "4430-095 Oliveira do Douro"
+    "FOOTER_ADDRESS_LINE1": "Oliveira do Douro",
+    "FOOTER_ADDRESS_LINE2": "",
 
-  
+    "COMPANY_FORM_SHOW": "d-none",
+    
+    "IMPACTO_SOCIAL_SHOW": "d-none",
+
+    "CONTACT_FORM_SHOW": "d-none"
+
 }
