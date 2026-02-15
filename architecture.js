@@ -54,6 +54,9 @@ function buildArchitecture (callback) {
         .then(data => {
           servicesectionEl.innerHTML = data
           loadLanguage(getLanguage())
+           if (typeof initServices === 'function') {
+            initServices()
+          }
         })
         .catch(err =>
           console.error('Erro ao carregar services-section.html', err)
