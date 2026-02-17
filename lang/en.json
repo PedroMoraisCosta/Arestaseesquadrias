@@ -28,6 +28,11 @@
     "services-general_title": "General Maintenance",    
     "services-restores_title": "Painting Work",
     "email_restauros_subject": "Information Request – Painting Work",
+    "email_electricity_subject": "Information Request – Electrical Installations",
+    "email_plumbing_subject": "Information Request – Plasterboard",
+    "email_general_subject": "Information Request – General Maintenance",
+    "email_anomalies_subject": "Information Request – Anomaly Correction",
+    "email_budget_subject": "Information Request – Quotes",
 
     "contacts_title": "Get in touch with us",
     "contactform-title":"Contact us form",

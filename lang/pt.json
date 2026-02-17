@@ -27,6 +27,12 @@
   "services-general_title": "Reparações",
   "services-restores_title": "Pintura",
   "email_restauros_subject": "Pedido de informação – Pintura",
+  "email_electricity_subject": "Pedido de informação – Instalações elétricas",
+  "email_plumbing_subject": "Pedido de informação – Pladur",
+  "email_general_subject": "Pedido de informação – Reparações",
+  "email_anomalies_subject": "Pedido de informação – Correção de anomalias",
+  "email_budget_subject": "Pedido de informação – Orçamentos",
+
   "contacts_title": "Entre em contato connosco",
   "contactform-title": "formulário de contato",
   "contactform-name": "Nome",
