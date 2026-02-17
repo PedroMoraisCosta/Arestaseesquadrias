@@ -463,7 +463,7 @@ body {
 .news-grid {
     display: grid;
     gap: 22px;
-    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-columns: repeat(1,minmax(0,1fr));
 }
 
 /* Card base (escuro) */
@@ -621,7 +621,7 @@ body {
         min-height: 120px;
     }
     .news-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(1,minmax(0,1fr));
         gap: 18px;
     }
 
